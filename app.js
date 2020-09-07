@@ -1,4 +1,4 @@
-var express = require("express"),
+const express = require("express"),
 	app = express(),
 	bodyParser = require("body-parser"),
 	mongoose = require("mongoose"),
@@ -12,7 +12,7 @@ var express = require("express"),
 	seedDB = require("./seeds");
 
 
-var commentRoutes = require("./routes/comments"),
+const commentRoutes = require("./routes/comments"),
 	campgroundRoutes = require("./routes/campgrounds"),
 	indexRoutes = require("./routes/index")
 
@@ -32,7 +32,11 @@ passport.deserializeUser(User.deserializeUser());
 
 
 
-mongoose.connect("mongodb://localhost/yelp_camp", { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect("mongodb+srv://ammanabua:zKpgEB7LsK13vldH@cluster0.aviee.mongodb.net/yelp_camp?retryWrites=true&w=majority", { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true }).then(() => {
+	console.log("Connected to DB!");
+}).catch(err => {
+	console.log("ERROR:", err.message);
+});
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs"); 
