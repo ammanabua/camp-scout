@@ -31,12 +31,12 @@ passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
 
-mongoose.connect(process.env.DATABASEURL, { useNewUrlParser: true, useUnifiedTopology: true }).then(() => {
+mongoose.connect('mongodb://localhost/yelp_camp', { useNewUrlParser: true, useUnifiedTopology: true }).then(() => {
 	console.log("Connected to DB!");
 }).catch(err => {
 	console.log("ERROR:", err.message);
 });
-// mongoose.connect("mongodb+srv://ammanabua:zKpgEB7LsK13vldH@cluster0.aviee.mongodb.net/yelp_camp?retryWrites=true&w=majority", { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true }).then(() => {
+// mongoose.connect("mongodb+srv://ammanabua:6NbVwmUpjetsNJRt@cluster0.aviee.mongodb.net/yelp_camp?retryWrites=true&w=majority", { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true }).then(() => {
 // 	console.log("Connected to DB!");
 // }).catch(err => {
 // 	console.log("ERROR:", err.message);
