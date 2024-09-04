@@ -2,11 +2,11 @@
 //COMMENTS ROUTES
 //===============================================
 
-var express = require("express");
-var router = express.Router({mergeParams: true});
-var Campground = require("../models/campgrounds");
-var Comment = require("../models/comments");
-var middleware = require("../middleware");
+const express = require("express");
+const router = express.Router({mergeParams: true});
+const Campground = require("../models/campgrounds");
+const Comment = require("../models/comments");
+const middleware = require("../middleware");
 
 router.get("/new", middleware.isLoggedIn, function(req, res){
 	// find a campground using it's id

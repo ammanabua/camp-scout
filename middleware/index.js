@@ -1,5 +1,5 @@
-var Campground = require("../models/campgrounds");
-var Comment = require("../models/comments");
+const Campground = require("../models/campgrounds");
+const Comment = require("../models/comments");
 
 //All our middleware goes here
 const middlewareObj = {};

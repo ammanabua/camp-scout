@@ -3,7 +3,7 @@
 	<div class="row">
 		<div class="col-md-3">
 			<p class="lead">
-				YelpCamp
+				CampScout
 			</p>
 			<div class="list-group">
 				<li class="list-group-item active">Info 1</li>
@@ -31,12 +31,14 @@
 						<em>Submitted by <%= campground.author.username %></em>
 					</p>
 					<% if(currentUser && campground.author.id.equals(currentUser._id)) { %>
-						<a class="btn btn-warning" href="/campgrounds/<%= campground._id %>/edit">Edit</a>
-						<form action="/campgrounds/<%= campground._id %>?_method=DELETE" method="POST">
-							<button id="delete-form" class="btn btn-danger">
-								Delete
-							</button>
-						</form>
+						<div class="d-flex gap-3">
+							<a class="btn btn-warning" href="/campgrounds/<%= campground._id %>/edit">Edit</a>
+							<form action="/campgrounds/<%= campground._id %>?_method=DELETE" method="POST">
+								<button id="delete-form" class="btn btn-danger">
+									Delete
+								</button>
+							</form>
+						</div>
 					<% } %>
 				</div>
 			</div>
@@ -66,6 +68,7 @@
 					</div>
 				<% }) %>
 			</div>
+			<a href="/campgrounds">Back</a>
 		</div>
 	</div>
 </div>
