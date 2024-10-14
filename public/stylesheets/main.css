@@ -13,3 +13,15 @@
 #delete-form {
 	display: inline;
 }
+
+#intro{
+	background-image: url(https://mdbootstrap.com/img/new/fluid/city/008.jpg);
+	height: 100vh;
+}
+
+#register{
+	background-image: url(https://images.unsplash.com/photo-1561711573-5bb5b6ed0c85?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y2FtcCUyMHNpdGV8ZW58MHx8MHx8fDA%3D);
+	height: 100vh;
+	background-repeat: no-repeat;
+	background-size: cover;
+}

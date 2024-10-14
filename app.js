@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require("express"),
 	app = express(),
 	bodyParser = require("body-parser"),
@@ -31,12 +32,12 @@ passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
 
-mongoose.connect('mongodb://localhost/yelp_camp', { useNewUrlParser: true, useUnifiedTopology: true }).then(() => {
+mongoose.connect(process.env.DATABASEURL, { useNewUrlParser: true, useUnifiedTopology: true }).then(() => {
 	console.log("Connected to DB!");
 }).catch(err => {
 	console.log("ERROR:", err.message);
 });
-// mongoose.connect("mongodb+srv://ammanabua:7mgaeWxjtOJ8LIfp@cluster0.aviee.mongodb.net/yelp_camp?retryWrites=true&w=majority", { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true }).then(() => {
+// mongoose.connect(process.env.MONGO_URL, { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true }).then(() => {
 // 	console.log("Connected to DB!");
 // }).catch(err => {
 // 	console.log("ERROR:", err.message);
