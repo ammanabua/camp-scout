@@ -37,11 +37,6 @@ mongoose.connect(process.env.DATABASEURL, { useNewUrlParser: true, useUnifiedTop
 }).catch(err => {
 	console.log("ERROR:", err.message);
 });
-// mongoose.connect(process.env.MONGO_URL, { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true }).then(() => {
-// 	console.log("Connected to DB!");
-// }).catch(err => {
-// 	console.log("ERROR:", err.message);
-// });
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs"); 
@@ -58,7 +53,7 @@ app.use(function(req, res, next){
 	next();
 });
 
-// seedDB();  //seed the database
+
 
 
 
